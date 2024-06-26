@@ -1,0 +1,191 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<MicomToolCommonProjectFile Version="1.00">
+  <CreatorType Name="CubeSuite+" Version="V8.11.00  [30 Nov 2023]" />
+  <Placeholders>
+    <PlaceholderPrefix>%</PlaceholderPrefix>
+    <PlaceholderPostfix>%</PlaceholderPostfix>
+  </Placeholders>
+  <Project Name="RL78_Sample2" Type="Application">
+    <Files>
+      <Category Name="SrcFile">
+        <Path>src\main.c</Path>
+        <Path>src\common.c</Path>
+        <Path>src\timer.c</Path>
+        <Path>src\int.c</Path>
+        <Path>src\port.c</Path>
+        <Path>src\watchdogtimer.c</Path>
+        <Path>src\system.c</Path>
+        <Path>src\systeminit.c</Path>
+        <Path>src\panel.c</Path>
+        <Path>src\digitalio.c</Path>
+        <Path>src\counter.c</Path>
+        <Path>src\74hc.c</Path>
+        <Path>src\cstart.asm</Path>
+        <Path>src\opt_byte.asm</Path>
+      </Category>
+      <Category Name="IncFile">
+        <Path>include\config.h</Path>
+        <Path>include\common.h</Path>
+        <Path>include\timer.h</Path>
+        <Path>include\int.h</Path>
+        <Path>include\port.h</Path>
+        <Path>include\watchdogtimer.h</Path>
+        <Path>include\system.h</Path>
+        <Path>include\panel.h</Path>
+        <Path>include\iodefine.h</Path>
+        <Path>include\sfr.h</Path>
+        <Path>include\pragma.h</Path>
+        <Path>include\digitalio.h</Path>
+        <Path>include\counter.h</Path>
+        <Path>include\74hc.h</Path>
+      </Category>
+    </Files>
+    <DebugOptions>
+      <DebugTool>Simulator</DebugTool>
+      <ConnectSettings>
+        <MainClock>4000000</MainClock>
+      </ConnectSettings>
+      <DebugToolSettings />
+    </DebugOptions>
+    <Device Series="RL78">R5F1058A</Device>
+    <BuildOptions Name="CC-RL" Version="V1.13.00">
+      <BuildMode Name="DefaultBuild" Active="True">
+        <LinkOrder>
+          <Path>DefaultBuild\main.obj</Path>
+          <Path>DefaultBuild\common.obj</Path>
+          <Path>DefaultBuild\timer.obj</Path>
+          <Path>DefaultBuild\int.obj</Path>
+          <Path>DefaultBuild\port.obj</Path>
+          <Path>DefaultBuild\watchdogtimer.obj</Path>
+          <Path>DefaultBuild\system.obj</Path>
+          <Path>DefaultBuild\systeminit.obj</Path>
+          <Path>DefaultBuild\panel.obj</Path>
+          <Path>DefaultBuild\digitalio.obj</Path>
+          <Path>DefaultBuild\counter.obj</Path>
+          <Path>DefaultBuild\74hc.obj</Path>
+          <Path>DefaultBuild\cstart.obj</Path>
+          <Path>DefaultBuild\opt_byte.obj</Path>
+        </LinkOrder>
+        <CommonOptions>
+          <IncludePathForC>include</IncludePathForC>
+        </CommonOptions>
+        <GeneralOptions>
+          <SimultaneouslyBuild>True</SimultaneouslyBuild>
+        </GeneralOptions>
+        <CompileOptions>
+          <Option>-cpu=S3</Option>
+          <Option>-obj_path=%BuildModeName%</Option>
+          <Option>-dev=%MicomToolPath%\Device\RL78\Devicefile\DR5F1058A.DVF</Option>
+          <Option>-g</Option>
+          <Option>-g_line</Option>
+          <Option>-Osize</Option>
+          <Option>-I include</Option>
+          <Option>-c</Option>
+        </CompileOptions>
+        <AssembleOptions>
+          <Option>-cpu=S3</Option>
+          <Option>-obj_path=%BuildModeName%</Option>
+          <Option>-dev=%MicomToolPath%\Device\RL78\Devicefile\DR5F1058A.DVF</Option>
+          <Option>-g</Option>
+          <Option>-c</Option>
+        </AssembleOptions>
+        <LinkOptions>
+          <Option>-SECURITY_ID=00000000000000000000</Option>
+          <Option>-DEVICE=%MicomToolPath%\Device\RL78\Devicefile\DR5F1058A.DVF</Option>
+          <Option>-DEBug</Option>
+          <Option>-NOCOmpress</Option>
+          <Option>-NOOPtimize</Option>
+          <Option>-OUtput=%BuildModeName%\%ProjectName%.abs</Option>
+          <Option>-LIBrary=%MicomToolPath%\CC-RL\V1.13.00\lib\rl78em4s.lib</Option>
+          <Option>-LIBrary=%MicomToolPath%\CC-RL\V1.13.00\lib\malloc_n.lib</Option>
+          <Option>-LIBrary=%MicomToolPath%\CC-RL\V1.13.00\lib\rl78em4r.lib</Option>
+          <Option>-DEBUG_MONITOR</Option>
+          <Option>-LISt=%BuildModeName%\%ProjectName%.map</Option>
+          <Option>-AUTO_SECTION_LAYOUT</Option>
+          <Option>-ROm=.data=.dataR</Option>
+          <Option>-ROm=.sdata=.sdataR</Option>
+          <Option>-NOMessage</Option>
+          <Option>-MEMory=High</Option>
+          <Option>-NOLOgo</Option>
+          <Option>-END</Option>
+          <Option>-Input=%BuildModeName%\%ProjectName%.abs</Option>
+          <Option>-DEVICE=%MicomToolPath%\Device\RL78\Devicefile\DR5F1058A.DVF</Option>
+          <Option>-OUtput=%BuildModeName%\%ProjectName%.hex</Option>
+          <Option>-FOrm=Hexadecimal</Option>
+          <Option>-NOMessage</Option>
+          <Option>-EXIt</Option>
+        </LinkOptions>
+        <LibraryGenerateOptions>
+          <GenerateMode>None</GenerateMode>
+        </LibraryGenerateOptions>
+        <IOHeaderGenerationOptions>
+          <Option>-df=%MicomToolPath%\Device\RL78\Devicefile\DR5F1058A.DVF</Option>
+          <Option>-o=%ProjectDir%\iodefine.h</Option>
+          <Option>-f</Option>
+          <UpdateIOMode>None</UpdateIOMode>
+        </IOHeaderGenerationOptions>
+      </BuildMode>
+    </BuildOptions>
+    <Extension_VirtualBoard>
+      <WatchItems>[]</WatchItems>
+      <UIData>{
+  "vboardInfo": {
+    "version": 0,
+    "vboardId": "TargetBoard",
+    "targetId": "RL78G11",
+    "components": [
+      {
+        "id": "board",
+        "name": null,
+        "offsetX": 0,
+        "offsetY": 0,
+        "connectedTo": null,
+        "type": "board",
+        "width": 700,
+        "height": 600,
+        "imageId": "RL78_G11_TargetBoard"
+      },
+      {
+        "id": "led1",
+        "name": "LED1",
+        "offsetX": 495,
+        "offsetY": 60,
+        "connectedTo": null,
+        "type": "led",
+        "subtype": "default",
+        "color": "blue",
+        "activeLevel": "H"
+      },
+      {
+        "id": "switch1",
+        "name": "SW1",
+        "offsetX": 495,
+        "offsetY": 130,
+        "connectedTo": null,
+        "type": "switch",
+        "activeLevel": "H",
+        "appearance": "push"
+      },
+      {
+        "id": "potentiometer0",
+        "name": "ANI",
+        "offsetX": 525,
+        "offsetY": 210,
+        "connectedTo": null,
+        "type": "potentiometer",
+        "initialValue": 0,
+        "onReset": "initialize",
+        "conversionFormula": {
+          "conversionFactor": null,
+          "conversionOffset": null,
+          "max": 5.5,
+          "min": 0,
+          "vdd": 5.5
+        }
+      }
+    ]
+  }
+}</UIData>
+    </Extension_VirtualBoard>
+  </Project>
+</MicomToolCommonProjectFile>
